@@ -171,6 +171,16 @@ function clearSingle(e) {
   selectedValues.value = null
 }
 
+function removeSelected(e, val) {
+  e.stopPropagation()
+  const current = [...selectedValues.value]
+  const idx = current.indexOf(val)
+  if (idx >= 0) {
+    current.splice(idx, 1)
+    selectedValues.value = current
+  }
+}
+
 function toggleOpen() {
   isOpen.value = !isOpen.value
   if (isOpen.value) {
@@ -286,9 +296,19 @@ onBeforeUnmount(() => {
           <span
             v-for="val in selectedValues"
             :key="val"
-            class="inline-flex items-center px-1.5 py-0.5 rounded bg-gray-200 text-gray-800 text-sm"
+            class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-gray-200 text-gray-800 text-sm"
           >
             {{ normalizedOptions.find(o => o.value === val)?.label ?? val }}
+            <button
+              type="button"
+              class="selectly-tag-remove w-4 h-4 flex items-center justify-center rounded hover:bg-gray-300 text-gray-500 hover:text-gray-700 shrink-0"
+              aria-label="Remove"
+              @click.stop="removeSelected($event, val)"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
           </span>
         </span>
         <span v-else class="text-gray-500">{{ displayLabel }}</span>
