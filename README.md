@@ -17,7 +17,7 @@ Searchable select component for **Vue 3** with **Tailwind CSS**.
 ## Install
 
 ```bash
-npm install selectix
+yarn add selectix
 ```
 
 **Peer dependencies:** Vue 3 and Tailwind CSS 4 (or 3). Your project must use Tailwind so the component's styles are applied.
@@ -113,11 +113,11 @@ The demo is deployed via GitHub Actions. In the repo **Settings → Pages → Bu
 ## Development
 
 ```bash
-npm install
-npm run dev        # demo app at http://localhost:5173
-npm run build      # build library to dist/
-npm run build:demo # build demo app to demo/
-npm run preview    # serve built demo (run build:demo first)
+yarn install
+yarn dev          # demo app at http://localhost:5173
+yarn build        # build library to dist/
+yarn build:demo   # build demo app to demo/
+yarn preview      # serve built demo (run build:demo first)
 ```
 
 ## License
