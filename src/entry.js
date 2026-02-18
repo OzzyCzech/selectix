@@ -1,8 +1,8 @@
-import Selectly from './components/Selectly.vue'
+import Selectix from './components/Selectix.vue'
 import './style.css'
 
-export { Selectly, install }
+export { Selectix, install }
 
 function install(app) {
-  app.component('Selectly', Selectly)
+  app.component('Selectix', Selectix)
 }

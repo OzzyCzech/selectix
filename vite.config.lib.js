@@ -8,8 +8,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/entry.js'),
-      name: 'Selectly',
-      fileName: (format) => `selectly.${format === 'es' ? 'js' : 'umd.cjs'}`,
+      name: 'Selectix',
+      fileName: (format) => `selectix.${format === 'es' ? 'js' : 'umd.cjs'}`,
     },
     rollupOptions: {
       external: ['vue'],
@@ -17,7 +17,7 @@ export default defineConfig({
         exports: 'named',
         globals: { vue: 'Vue' },
         assetFileNames: (assetInfo) =>
-          assetInfo.name === 'style.css' ? 'selectly.css' : assetInfo.name,
+          assetInfo.name === 'style.css' ? 'selectix.css' : assetInfo.name,
       },
     },
     cssCodeSplit: false,

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import Selectly from './components/Selectly.vue'
+import Selectix from './components/Selectix.vue'
 
 const countrySingle = ref('')
 const countryMultiple = ref([])
@@ -64,7 +64,7 @@ const footballTeams = [
   <div class="min-h-screen bg-gray-50 text-gray-800">
     <div class="max-w-4xl mx-auto px-6 py-10">
       <header class="mb-10">
-        <h1 class="text-3xl font-bold text-gray-900">Selectly <span class="text-gray-500 font-normal text-xl">(Vue.js & Tailwind)</span></h1>
+        <h1 class="text-3xl font-bold text-gray-900">Selectix <span class="text-gray-500 font-normal text-xl">(Vue.js & Tailwind)</span></h1>
         <p class="mt-2 text-gray-600">A Vue 3 component that makes long, unwieldy select boxes more user-friendly.</p>
       </header>
 
@@ -74,7 +74,7 @@ const footballTeams = [
           <div class="flex gap-8 flex-wrap">
             <div class="w-72">
               <label class="block text-sm font-medium text-gray-600 mb-1">Choose a country</label>
-              <Selectly
+              <Selectix
                 v-model="countrySingle"
                 :options="countries"
                 placeholder="Choose a Country..."
@@ -87,7 +87,7 @@ const footballTeams = [
           <h2 class="text-xl font-semibold mb-4">Multiple select</h2>
           <div class="w-72">
             <label class="block text-sm font-medium text-gray-600 mb-1">Choose countries</label>
-            <Selectly
+            <Selectix
               v-model="countryMultiple"
               :options="countries"
               placeholder="Choose a Country..."
@@ -101,7 +101,7 @@ const footballTeams = [
           <div class="flex gap-8 flex-wrap">
             <div class="w-72">
               <label class="block text-sm font-medium text-gray-600 mb-1">Single with groups</label>
-              <Selectly
+              <Selectix
                 v-model="teamSingle"
                 :options="footballTeams"
                 placeholder="Your Favorite Football Team"
@@ -109,7 +109,7 @@ const footballTeams = [
             </div>
             <div class="w-72">
               <label class="block text-sm font-medium text-gray-600 mb-1">Multiple with groups</label>
-              <Selectly
+              <Selectix
                 v-model="teamMultiple"
                 :options="footballTeams"
                 placeholder="Your Favorite Football Team"
@@ -124,7 +124,7 @@ const footballTeams = [
           <div class="flex gap-8 flex-wrap">
             <div class="w-72">
               <label class="block text-sm font-medium text-gray-600 mb-1">Single</label>
-              <Selectly
+              <Selectix
                 v-model="bearSingle"
                 :options="bears"
                 placeholder="Your Favorite Type of Bear"
@@ -132,7 +132,7 @@ const footballTeams = [
             </div>
             <div class="w-72">
               <label class="block text-sm font-medium text-gray-600 mb-1">Multiple</label>
-              <Selectly
+              <Selectix
                 v-model="bearMultiple"
                 :options="bears"
                 placeholder="Your Favorite Types of Bear"
@@ -145,7 +145,7 @@ const footballTeams = [
         <div>
           <h2 class="text-xl font-semibold mb-4">Hide search (disable_search_threshold: 10)</h2>
           <div class="w-72">
-            <Selectly
+            <Selectix
               v-model="bearNoSearch"
               :options="bears"
               placeholder="Your Favorite Type of Bear"
@@ -157,7 +157,7 @@ const footballTeams = [
         <div>
           <h2 class="text-xl font-semibold mb-4">Custom "No results" text</h2>
           <div class="w-72">
-            <Selectly
+            <Selectix
               v-model="bearNoResults"
               :options="bears"
               placeholder="Type 'C' to view"
@@ -169,7 +169,7 @@ const footballTeams = [
         <div>
           <h2 class="text-xl font-semibold mb-4">Allow deselect (single)</h2>
           <div class="w-72">
-            <Selectly
+            <Selectix
               v-model="bearDeselect"
               :options="bears"
               placeholder="Your Favorite Type of Bear"
@@ -183,7 +183,7 @@ const footballTeams = [
           <div class="flex gap-8 flex-wrap">
             <div class="flex-1 min-w-0 max-w-md">
               <label class="block text-sm font-medium text-gray-600 mb-1">Single</label>
-              <Selectly
+              <Selectix
                 v-model="bearWidth"
                 :options="bears"
                 placeholder="Your Favorite Types of Bear"
@@ -192,7 +192,7 @@ const footballTeams = [
             </div>
             <div class="flex-1 min-w-0 max-w-md">
               <label class="block text-sm font-medium text-gray-600 mb-1">Multiple</label>
-              <Selectly
+              <Selectix
                 v-model="bearWidthMulti"
                 :options="bears"
                 placeholder="Your Favorite Types of Bear"
@@ -205,7 +205,7 @@ const footballTeams = [
       </section>
 
       <footer class="mt-16 pt-8 border-t border-gray-200 text-gray-500 text-sm">
-        Selectly – searchable select component with Vue 3 and Tailwind CSS.
+        Selectix – searchable select component with Vue 3 and Tailwind CSS.
       </footer>
     </div>
   </div>

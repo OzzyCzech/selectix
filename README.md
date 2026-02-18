@@ -1,4 +1,4 @@
-# Selectly
+# Selectix
 
 Searchable select component for **Vue 3** with **Tailwind CSS**.
 
@@ -17,7 +17,7 @@ Searchable select component for **Vue 3** with **Tailwind CSS**.
 ## Install
 
 ```bash
-npm install selectly
+npm install selectix
 ```
 
 **Peer dependencies:** Vue 3 and Tailwind CSS 4 (or 3). Your project must use Tailwind so the component's styles are applied.
@@ -29,7 +29,7 @@ npm install selectly
 In your app entry (e.g. `main.js` or `App.vue`):
 
 ```js
-import 'selectly/style.css'
+import 'selectix/style.css'
 ```
 
 ### 2. Use the component
@@ -38,8 +38,8 @@ import 'selectly/style.css'
 
 ```vue
 <script setup>
-import { Selectly } from 'selectly'
-import 'selectly/style.css'
+import { Selectix } from 'selectix'
+import 'selectix/style.css'
 
 const selected = ref('')
 const options = [
@@ -49,7 +49,7 @@ const options = [
 </script>
 
 <template>
-  <Selectly
+  <Selectix
     v-model="selected"
     :options="options"
     placeholder="Choose..."
@@ -61,16 +61,16 @@ const options = [
 
 ```js
 import { createApp } from 'vue'
-import { Selectly, install } from 'selectly'
-import 'selectly/style.css'
+import { Selectix, install } from 'selectix'
+import 'selectix/style.css'
 import App from './App.vue'
 
 const app = createApp(App)
-app.use(install) // registers <Selectly> globally
+app.use(install) // registers <Selectix> globally
 app.mount('#app')
 ```
 
-Then use `<Selectly>` in any template.
+Then use `<Selectix>` in any template.
 
 ### Props
 
@@ -96,13 +96,13 @@ Then use `<Selectly>` in any template.
 
 ## Tailwind
 
-The component uses Tailwind utility classes. With **Tailwind 4** and the Vite plugin, your app will pick them up from `node_modules/selectly` if needed. With **Tailwind 3**, add the package to `content` in `tailwind.config.js`:
+The component uses Tailwind utility classes. With **Tailwind 4** and the Vite plugin, your app will pick them up from `node_modules/selectix` if needed. With **Tailwind 3**, add the package to `content` in `tailwind.config.js`:
 
 ```js
 content: [
   './index.html',
   './src/**/*.{vue,js,ts,jsx,tsx}',
-  './node_modules/selectly/**/*.{vue,js}',
+  './node_modules/selectix/**/*.{vue,js}',
 ],
 ```
 

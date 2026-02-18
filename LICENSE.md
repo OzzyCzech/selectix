@@ -1,4 +1,4 @@
-#### Selectly
+#### Selectix
 
 MIT License
 

@@ -1,16 +1,16 @@
 {
-  "name": "selectly",
+  "name": "selectix",
   "version": "2.0.0",
   "description": "Searchable select component for Vue 3 with Tailwind CSS",
   "type": "module",
-  "main": "./dist/selectly.umd.cjs",
-  "module": "./dist/selectly.js",
+  "main": "./dist/selectix.umd.cjs",
+  "module": "./dist/selectix.js",
   "exports": {
     ".": {
-      "import": "./dist/selectly.js",
-      "require": "./dist/selectly.umd.cjs"
+      "import": "./dist/selectix.js",
+      "require": "./dist/selectix.umd.cjs"
     },
-    "./style.css": "./dist/selectly.css"
+    "./style.css": "./dist/selectix.css"
   },
   "files": [
     "dist"
@@ -39,7 +39,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OzzyCzech/selectly"
+    "url": "https://github.com/OzzyCzech/selectix"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.18",

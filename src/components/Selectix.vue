@@ -7,7 +7,7 @@ function findNextSelectableIndex(options, currentIndex, direction) {
   while (i >= 0 && i < options.length) {
     if (!options[i].disabled) return i
     i += step
-  }
+  } 
   return currentIndex
 }
 
@@ -277,13 +277,13 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="containerRef"
-    class="selectly-container inline-block align-middle"
+    class="selectix-container inline-block align-middle"
     :style="containerStyle"
-    :class="{ 'selectly-rtl': rtl }"
+    :class="{ 'selectix-rtl': rtl }"
   >
     <div
-      class="selectly-trigger relative border border-gray-300 bg-white min-h-[30px] pl-2 pr-6 py-1 cursor-pointer rounded shadow-sm flex items-center justify-between"
-      :class="{ 'selectly-open': isOpen }"
+      class="selectix-trigger relative border border-gray-300 bg-white min-h-[30px] pl-2 pr-6 py-1 cursor-pointer rounded shadow-sm flex items-center justify-between"
+      :class="{ 'selectix-open': isOpen }"
       tabindex="0"
       role="combobox"
       :aria-expanded="isOpen"
@@ -291,7 +291,7 @@ onBeforeUnmount(() => {
       @click="toggleOpen"
       @keydown="handleKeydown"
     >
-      <span class="selectly-label truncate flex-1">
+      <span class="selectix-label truncate flex-1">
         <span v-if="multiple && selectedValues.length" class="flex flex-wrap gap-1">
           <span
             v-for="val in selectedValues"
@@ -301,7 +301,7 @@ onBeforeUnmount(() => {
             {{ normalizedOptions.find(o => o.value === val)?.label ?? val }}
             <button
               type="button"
-              class="selectly-tag-remove w-4 h-4 flex items-center justify-center rounded hover:bg-gray-300 text-gray-500 hover:text-gray-700 shrink-0"
+              class="selectix-tag-remove w-4 h-4 flex items-center justify-center rounded hover:bg-gray-300 text-gray-500 hover:text-gray-700 shrink-0"
               aria-label="Remove"
               @click.stop="removeSelected($event, val)"
             >
@@ -313,11 +313,11 @@ onBeforeUnmount(() => {
         </span>
         <span v-else class="text-gray-500">{{ displayLabel }}</span>
       </span>
-      <span class="selectly-actions flex items-center gap-0.5 absolute right-2 top-1/2 -translate-y-1/2">
+      <span class="selectix-actions flex items-center gap-0.5 absolute right-2 top-1/2 -translate-y-1/2">
         <button
           v-if="!multiple && allowDeselect && selectedValues != null && selectedValues !== ''"
           type="button"
-          class="selectly-deselect w-4 h-4 flex items-center justify-center rounded hover:bg-gray-200 text-gray-500 hover:text-gray-700"
+          class="selectix-deselect w-4 h-4 flex items-center justify-center rounded hover:bg-gray-200 text-gray-500 hover:text-gray-700"
           aria-label="Deselect"
           @click="clearSingle"
         >
@@ -325,7 +325,7 @@ onBeforeUnmount(() => {
             <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
         </button>
-        <span class="selectly-arrow w-4 h-4 flex items-center justify-center text-gray-400">
+        <span class="selectix-arrow w-4 h-4 flex items-center justify-center text-gray-400">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{ 'rotate-180': isOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -335,21 +335,21 @@ onBeforeUnmount(() => {
 
     <div
       v-show="isOpen"
-      class="selectly-drop absolute left-0 right-0 top-full mt-0.5 border border-gray-300 bg-white rounded shadow-lg z-50 max-h-60 flex flex-col"
+      class="selectix-drop absolute left-0 right-0 top-full mt-0.5 border border-gray-300 bg-white rounded shadow-lg z-50 max-h-60 flex flex-col"
     >
       <div v-if="showSearch" class="p-1 border-b border-gray-200">
         <input
           ref="searchInputRef"
           v-model="searchQuery"
           type="text"
-          class="selectly-search-input w-full px-2 py-1.5 border border-gray-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          class="selectix-search-input w-full px-2 py-1.5 border border-gray-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Search..."
           autocomplete="off"
           @click.stop
           @keydown="handleSearchKeydown"
         >
       </div>
-      <div class="selectly-results overflow-auto flex-1 py-1">
+      <div class="selectix-results overflow-auto flex-1 py-1">
         <template v-if="noResults">
           <div class="px-3 py-2 text-gray-500 text-sm">
             {{ noResultsText }} "{{ searchQuery }}"
@@ -357,7 +357,7 @@ onBeforeUnmount(() => {
         </template>
         <template v-else>
           <template v-for="(group, gi) in filteredGrouped" :key="gi">
-            <div v-if="group.type === 'group'" class="selectly-group">
+            <div v-if="group.type === 'group'" class="selectix-group">
               <div class="px-2 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wide bg-gray-50">
                 {{ group.label }}
               </div>
@@ -366,7 +366,7 @@ onBeforeUnmount(() => {
                 :key="opt.value ?? opt.label"
                 type="button"
                 :data-option-index="filteredOptions.findIndex(o => o.value === (opt.value ?? opt.label))"
-                class="selectly-option w-full text-left px-3 py-1.5 text-sm flex items-center gap-2"
+                class="selectix-option w-full text-left px-3 py-1.5 text-sm flex items-center gap-2"
                 :class="{
                   'bg-blue-50 text-blue-800': isSelected({ value: opt.value ?? opt.label, label: opt.label ?? opt.value, disabled: opt.disabled }),
                   'text-gray-400 cursor-not-allowed': opt.disabled,
@@ -388,7 +388,7 @@ onBeforeUnmount(() => {
                 :key="opt.value ?? opt.label"
                 type="button"
                 :data-option-index="filteredOptions.findIndex(o => o.value === (opt.value ?? opt.label))"
-                class="selectly-option w-full text-left px-3 py-1.5 text-sm flex items-center gap-2"
+                class="selectix-option w-full text-left px-3 py-1.5 text-sm flex items-center gap-2"
                 :class="{
                   'bg-blue-50 text-blue-800': isSelected({ value: opt.value ?? opt.label, label: opt.label ?? opt.value, disabled: opt.disabled }),
                   'text-gray-400 cursor-not-allowed': opt.disabled,
@@ -412,13 +412,13 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.selectly-container {
+.selectix-container {
   position: relative;
 }
-.selectly-drop {
+.selectix-drop {
   min-width: 100%;
 }
-.selectly-rtl .selectly-drop {
+.selectix-rtl .selectix-drop {
   right: 0;
   left: auto;
 }
