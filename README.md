@@ -114,7 +114,7 @@ content: [
 
 ## Demo
 
-https://ozzycz.github.io/selectix/
+https://ozzyczech.github.io/selectix/
 
 ## Development
 
