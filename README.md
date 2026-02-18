@@ -112,10 +112,6 @@ content: [
 ],
 ```
 
-## Demo / GitHub Pages
-
-The demo is deployed via GitHub Actions. In the repo **Settings → Pages → Build and deployment**, set Source to **GitHub Actions**. The site will be at `https://<username>.github.io/selectix/` (replace `<username>` with your GitHub username).
-
 ## Development
 
 ```bash
