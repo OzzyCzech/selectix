@@ -1,5 +1,11 @@
 # Selectix
 
+[![NPM Downloads](https://img.shields.io/npm/dm/selectix?style=for-the-badge)](https://www.npmjs.com/package/selectix)
+[![NPM Version](https://img.shields.io/npm/v/selectix?style=for-the-badge)](https://www.npmjs.com/package/selectix)
+[![NPM License](https://img.shields.io/npm/l/selectix?style=for-the-badge)](https://github.com/OzzyCzech/selectix/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/OzzyCzech/selectix?style=for-the-badge)](https://github.com/OzzyCzech/selectix/commits/main)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/OzzyCzech/selectix/demo.yml?style=for-the-badge)](https://github.com/OzzyCzech/selectix/actions)
+
 Searchable select component for **Vue 3** with **Tailwind CSS**.
 
 ## Features
@@ -122,4 +128,4 @@ yarn preview      # serve built demo (run build:demo first)
 
 ## License
 
-MIT. See [LICENSE.md](LICENSE.md).
+MIT. See [LICENSE](LICENSE).
