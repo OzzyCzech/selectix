@@ -116,7 +116,7 @@ The demo is deployed via GitHub Actions. In the repo **Settings → Pages → Bu
 npm install
 npm run dev        # demo app at http://localhost:5173
 npm run build      # build library to dist/
-npm run build:demo # build demo app to dist-demo/
+npm run build:demo # build demo app to demo/
 npm run preview    # serve built demo (run build:demo first)
 ```
 

@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [vue(), tailwindcss()],
   base: '/selectix/',
   build: {
-    outDir: 'dist-demo',
+    outDir: 'demo',
   },
 })
