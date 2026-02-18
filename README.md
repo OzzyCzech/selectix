@@ -112,6 +112,10 @@ content: [
 ],
 ```
 
+## Demo
+
+https://ozzycz.github.io/selectix/
+
 ## Development
 
 ```bash
